@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>3. Defining Data Protection - Data Protection Codex</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "3. Defining Data Protection";
+        var mkdocs_page_input_path = "chapter3.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Data Protection Codex
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Section 1</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../chapter1/">1. A Short History of Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../chapter2/">2. Why Protect Data?</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">3. Defining Data Protection</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#online-day">Online Day</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-world-wide-web">The World Wide Web</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#protection-hierarchy">Protection Hierarchy</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#recovery-vs-continuity">Recovery vs Continuity</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#alternative-uses">Alternative Uses</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#service-level-agreement-and-objectives">Service Level Agreement and Objectives</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../chapter4/">4. ETIL</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Section 2</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../chapter5/">5. A Short History of Data Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../chapter6/">6. Diving Deeper into Data Protection</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Data Protection Codex</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Section 1</li>
+      <li class="breadcrumb-item active">3. Defining Data Protection</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="defining-data-protection">Defining Data Protection</h1>
+<p>Now that we’re clear why data needs protecting, we should clarify exactly what is meant by data protection and how that definition has changed in a modern context.  Looking back 40 years or more, the term data protection was synonymous with backup and restore.  If data was lost, then a copy could be retrieved from the backup.  This process was acceptable when most of our computing activities were batch processes.  Early computing in the 1950s and 1960s focused on the asynchronous analysis of data fed into a centralised mainframe-style system.  There was rarely an “online” component, what we generally refer to as OLTP or Online Transaction Processing.  IBM, for example, only introduced CICS (<a href="https://en.wikipedia.org/wiki/CICS">Customer Information Control System</a>), an OLTP middleware system, in 1969.  With much of the processing not directly user-dependent, recovering from a backup was a reasonable recovery strategy, especially where backups could be taken (or checkpointed) in line with the start and end of batch processing work.  Many IT professionals from the 1970s and 1980s will be familiar with rerunning a job from a particular step or in its entirety.  </p>
+<p>We should also remember that much of the data in computer systems of the late 20th century would have been manually entered.  If a restore returned a database or other system to a state the day or week before, then theoretically, much of that data could be re-entered and bring the system back up to date.  As we highlighted earlier, that luxury no longer exists, as we will now discuss in more detail.</p>
+<h2 id="online-day">Online Day</h2>
+<p>Before the advent of the World Wide Web, most computing systems would be focused on the delivery of services during the online day, or between the hours of (approximately) 9am to 5pm and Monday to Friday, generally in a single time zone.  Two factors changed the online day into 24/7 operations.</p>
+<p>The first was the adoption of the World Wide Web, which enabled both B2B (business to business) and B2C (business to customer) operations.  The late 1990s saw the rise of new technology companies such as Amazon.com and a swathe of early companies riding the first dotcom boom.  The second factor was globalisation.  Although Amazon launched in the US first, it was still possible to ship from the US to the rest of the world.  Many websites offered products that weren’t physical and so needed no shipping, for example music or software.</p>
+<p>As the use of the Internet and the World Wide Web increased, businesses moved from the traditional 9-5 operation to being global 24/7 enterprises, where downtime and outages would result in loss of business and reputational damage.  Now, simple backup and restore wasn’t enough to keep IT systems running within the service levels needed to do business.</p>
+<h2 id="the-world-wide-web">The World Wide Web</h2>
+<p>The growth of the Internet introduced one other major issue for data protection.  In the legacy model of tightly controlled data centres and mainframes, manual data entry played a big part of the data creation process.  The Internet resulted in systems that could handle thousands and eventually millions of concurrent transactions.  Some of this data might be commercial transactions – customer orders for products and services – while other data represented interactions with the system, such as popular pages and search requests.  This data is incredibly valuable to an online merchant, as it allows a website to direct the customer with more targeted ads.  Amazon.com’s advertising revenue in Q3 FY2024, for example, was worth $14.3 billion or around 9% of turnover13.  Similarly, Google, Meta and Microsoft all depend on user behaviour tracking to optimise their platforms.  </p>
+<p>User-generated data also exists outside the commercial environment.  IMDb, for example, founded in 1990, started as a website for fans to share film and movie information, initially as a Usenet group and then as a dedicated website.  The IMDb database represents millions of hours of user content creation (in 2022, the database contained details of 10.1 million titles with 11.5 million person records and 83 million registered users).  If the IMDb database was lost, it would be almost impossible to recreate in its current form.  Similarly, we can look at Stack Overflow, GitHub, Reddit, and thousands if not millions of other websites that have evolved over time and could never be rebuilt without backups.  </p>
+<p>As the proliferation of IT in our daily lives has continued, whether that is for commerce, banking or entertainment, we now depend on the ability for data protection to recover data at any time and in as timely a fashion as possible.  How is that achieved, with such a complex web of infrastructure that spans our four categories? </p>
+<p>We will start by looking at the concept of a data protection hierarchy and then examine the metrics used to quantify the requirements of a data protection process.  </p>
+<h2 id="protection-hierarchy">Protection Hierarchy</h2>
+<p>We can define a data protection hierarchy as a system that uses multiple techniques and processes to ensure data is available 24/7.  We will expand on these later in much more detail, but briefly introduce them now to explain why simple backup and restore is no longer enough to ensure continuous operations.</p>
+<p>BC/DR – An acronym for two terms – business continuity and disaster recovery.  Ultimately, all data protection and systems management functions work towards maintaining business continuity, which doesn’t just refer to IT systems.  Disaster Recovery defines the process of recovering from a major incident, such as the loss of a data centre, a ransomware attack or major network outage.</p>
+<p>DLP – Data Leakage Protection – a relatively new term that describes the requirement to ensure no data is lost to external exfiltration.  We will look at DLP when covering ransomware, but for now, think of the need to ensure that sensitive data within the business doesn’t get into the hands of competitors, bad actors looking to blackmail an organisation or be leaked on the Internet to cause reputational damage.</p>
+<p>Data Protection – the process of protecting data assets from loss or corruption by systems failure, natural disasters or human error.  The protection of data can be real-time or point-in-time, depending on the nature of the loss and recovery required.  There are many techniques employed to protect data, not all of which need or should be point-in-time solutions.</p>
+<p>Backup/Restore – the process of taking a point-in-time copy of data and using that data to recover an application or computer system to a previously known good state.  Backup and restore doesn’t need to restore an entire application and could be used to perform partial recovery, such as a deleted or corrupted file.</p>
+<h2 id="recovery-vs-continuity">Recovery vs Continuity</h2>
+<p>We briefly mentioned the concept of business continuity as a process of maintaining the availability of computer systems for ongoing access.  Ideally, we want to ensure data loss is mitigated or avoided altogether.  As a result, computer systems design will include resiliency capabilities that protect data, but don’t require a recovery process.  We will discuss metrics in a moment, but clearly it is more desirable to provide continued access to data than lose it and need to recover.  The difference between the two is obvious and is explained by the downtime or outage experienced by a computer system or application.</p>
+<p>Building resilience into a system results in additional cost, as the usual process of achieving high availability is redundant hardware and more complex software.  There is a clear trade-off when building applications as to the level of resilience required.  A banking application will generally want 100% uptime (or as close as possible), with no loss of data.  A social media platform or blog website may desire 100% availability, but can live with some downtime and even some data loss.  </p>
+<h2 id="alternative-uses">Alternative Uses</h2>
+<p>So far, we’ve covered data protection as a mechanism to restore operations from either systems failure, natural disasters or human error.  However, data protected by backup systems can be used for alternative processes.  Many businesses, for example, use point-in-time backups as the source of test/development data or in place of an archiving system.</p>
+<p>The use of live production data for testing and development purposes needs to be considered carefully.  In most industries there are guidelines on the use of personally identifiable information (PII) that must be followed.  In certain jurisdictions, regulations such as the EU GDPR, the CCPA (California Consumer Privacy Act) and UK’s Data Protection Act can result in significant penalties for the misuse of PII.  As a result, PII data being used in test environments should be tokenised to remove sensitive information.i  Anonymisation is good practice, as test data will generally have a lower standard of security applied, compared to production data.  This includes both the security of systems and those people within a company who should normally have access to what could be sensitive information.  As a best practice, no data should be accessible by development teams without having gone through the tokenisation or anonymisation process.  </p>
+<p>The use of backups as an archive also presents problems to the business and IT departments.  Typically, an archive is an extract of inactive customer or business data that needs to be retained for business purposes but isn’t in active use.  The archiving of data out of live production systems has positive benefits to live operations, reducing the volume of daily backups and reducing the footprint (both storage and CPU/memory requirements) of databases and other systems to just the data being processed.</p>
+<p>Reducing the size of a production footprint by archiving records also improves recovery time, if data is lost.  Archived data can also be placed behind logical or physical air gaps, reducing the risk of encryption by ransomware.  </p>
+<p>In some businesses, archiving is implemented simply by the long-term retention of backups.  This process is problematic for many reasons.  Firstly, the size of backups continues to grow over time, including those retained for archive.  This creates “backup sprawl”, with many more copies of data retained than is strictly necessary.  The storage industry addressed this problem with data deduplication and deduplicating backup appliances.  Although this was a novel and innovative approach, it doesn’t solve the issue that any restore from backup could require recovering an entire dataset (especially with structured databases), elongating the restore time for primary recovery and for accessing data in an archiving process.</p>
+<p>Second, data that is retained long term will continue to contain records for customers or individuals that are no longer actively engaging with the business.  Under GDPR rules, for example, those people could invoke the “right to be forgotten” (RTBF).  Removing individual data records from backups is almost impossible to achieve, requiring businesses to keep secondary information on those individuals, ensuring that should data be restored from a long-term backup, the records relating to RTBF customers is subsequently removed.  This creates a paradox in that businesses must retain data on customers who have the right not to have their data retained.  Getting the RTBF process wrong could result in big fines for businesses.  This makes it more logical to build better processes and data architectures that implement robust archiving, rather than relying on retained backups.</p>
+<h2 id="service-level-agreement-and-objectives">Service Level Agreement and Objectives</h2>
+<p>Earlier in this book we touched on the topic of service levels with respect to data protection, both in the backup and restore process.  As we look at what service levels and service objectives should look like, we need to distinguish between the responsibilities of data owners and data managers in the data protection sphere.</p>
+<p>A data owner, such as a line of business, or business unit should be the decision maker when deciding what data needs to be protected.  The data and application owner also needs to determine the frequency and retention of backups, with help from the IT department (more on this in a moment).  Data service levels lie with the business because only the data owner knows the value of their data.  In addition, the data owner knows the turnover and “velocity” of that data in terms of the rate of creation and overall turnover.  As a third metric, the business data owner understands the implications of data inaccessibility or downtime.  This cost translates directly into the effort that needs to be placed on restoring accessibility, including data recovery time.</p>
+<p>Data managers, such as IT teams responsible for data protection, will work with data owners and define a framework in which data protection processes are applied.  A framework typically consists of both service level agreements and objectives.  </p>
+<p>A service level agreement (SLA) is simply a formal or informal contract between an application or data owner and a service provider to meet a certain level of service when delivering infrastructure or services to support an application.  Service levels cover uptime (availability), performance (application response times and throughput capability) and for the purposes of our discussion, backup frequency, backup elapsed times, and recovery times in the case of an outage.  </p>
+<p>Note that a service level agreement could be in place with a third-party supplier (like an MSP or cloud platform) and be in the form of a legal contract that includes financial penalties when service levels are missed.  Public cloud vendors, for example, offer SLAs on the performance and uptime of cloud services, with service credits offered when the levels are not met.  Service level objectives generally have less formal definitions and represent targets rather than binding agreements.  </p>
+<p>Data protection typically measures two main targets for recovery of data.  These are <em>Recovery Point Objective</em> and <em>Recovery Time Objective</em>, defined as follows:</p>
+<p><strong>Recovery Point Objective</strong> – a measure of how current data will be at the time of recovery, measured in time (minutes, hours or days) and is essentially a measure of how much data loss an application can tolerate.  For example, a web application may accept an RPO=15 minutes, meaning data is recovered to a point 15 minutes previously, with some loss of data.  A banking application will almost certainly only tolerate RPO=0, meaning no data loss is tolerated at all.</p>
+<p><strong>Recovery Time Objective</strong> – the time taken to recover an application back to operational state, in the event of a failure.  Ideally, applications would be restored back to a live operational state instantly, but that’s not practical or cost effective for every application type.  Therefore, some degree of delay is inevitable, as data is restored from backups into live systems.</p>
+<p>In general, business owners will want and expect the lowest RPO and RTO possible.  It is the responsibility of the IT teams to work with the business and data owners to establish acceptable recovery times and recovery points that are practical to deliver within a reasonable budget.</p>
+<p>All the metrics established for data protection will be dependent on the volume of data to be protected, which has a direct implication of the cost of protection and the infrastructure needed to deliver it.  For example, if backup takes one hour to protect an application, then a 15-minute recovery point objective is not going to work.  However, many of the challenges around backup times can be mitigated, depending on the infrastructure involved.</p>
+<p>Similarly, backup and restore times can be asymmetrical.  Deduplicating appliances, for example, typically ingested backup data much quicker than it could be restored, creating an imbalance in the design of infrastructure that has cost and scaling implications.  </p>
+<p>Both RTO and RPO relate to the recovery of data after a loss has occurred.  However, it is just as important to specify service level objectives on how frequently data is protected, how many copies are retained and for what length of time.  The frequency of backup is, of course, directly related to the recovery point objective.  If data needs to be restored with a maximum of 15 minutes RPO, then data needs to be protected at least every 15 minutes, for example.</p>
+<p>Historically, legacy data protection platforms have required the backup administrator to translate the myriad service level objectives into backup scheduling and prioritisation.  Modern data protection solutions obfuscate the need for manual scheduling by defining protection policies.  This method of operation reduces the manual overhead on backup scheduling and adjustments, while providing for the measurement of achieved service level success compared to the desired service level objectives.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../chapter2/" class="btn btn-neutral float-left" title="2. Why Protect Data?"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../chapter4/" class="btn btn-neutral float-right" title="4. ETIL">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../chapter2/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../chapter4/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

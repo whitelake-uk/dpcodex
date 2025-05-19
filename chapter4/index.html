@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>4. ETIL - Data Protection Codex</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "4. ETIL";
+        var mkdocs_page_input_path = "chapter4.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Data Protection Codex
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Section 1</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../chapter1/">1. A Short History of Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../chapter2/">2. Why Protect Data?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../chapter3/">3. Defining Data Protection</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">4. ETIL</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#extract">Extract</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#transform">Transform</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#index">Index</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#load">Load</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Section 2</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../chapter5/">5. A Short History of Data Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../chapter6/">6. Diving Deeper into Data Protection</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Data Protection Codex</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Section 1</li>
+      <li class="breadcrumb-item active">4. ETIL</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="etil">ETIL</h1>
+<p>What are the mechanics of a data protection process?  Many readers may be familiar with the term “ETL”, a common standard in data pipelines which stands for Extract, Transform and Load.  Data processing techniques, such as those which build data warehouses, extract data from production systems, transform them in some way (such as changing the structure into XML or JSON, or removing personal information) and then store that data in another system for further use (the load step).  ETL can also be used for data cleaning, where the quality of source data is poor or needs additional metadata or other content to supplement it.  An example could be adding postcodes (zip codes) to addresses, or validating date of birth information is in the correct format and a valid date.</p>
+<p>In this book we use ETIL to describe the process in which data is secured as a backup for future use in recovery.  The additional step represented by the letter “I” stands for “indexing”, essentially ensuring that the data being protected can be easily searched in the future.  In essence, data protection is like an ETL process, but with that one additional step, which provides for the future searching of backup information.</p>
+<p>Why do we need these four processes in data protection?  Let’s look at each of them in a little more detail.</p>
+<h2 id="extract">Extract</h2>
+<p>As we’ve already explained, backup is the process of taking a point-in-time copy of data as an insurance policy for some future incident.  Essentially, we extract a copy of data from our primary applications and systems.  Exactly how this is done depends on the data and the platform.  For example, data on a shared storage array could be extracted via a snapshot copy; data in a database could be extracted using a SQL query; data in a virtual server platform could be extracted via an advertised API.  </p>
+<p>Each of these processes will be tailored to the platform and the data.  Using the server virtualisation platform as an example, VMware vSphere offers a specific API to extract changed data at a block level for individual virtual machines.  VADP (VMware vSphere Storage APIs – Data Protection) provides a stream of changed blocks separately for each virtual machine, which is more efficient than, taking snapshots within the virtual machine or copying data at the datastore level.</p>
+<p>Data extraction must be non-invasive (as much as possible), create a consistent version of data, while being obtained in a form that can be usefully used later for recovery.  </p>
+<h2 id="transform">Transform</h2>
+<p>Once a backup solution has extracted data from a primary application, that data will go through some form of transformation.  The transform step is used to optimise data before it is saved for future use.  This could mean deduplicating the content (if identical data already exists on the backup system), parsing the data to extract only the content to be stored (from a snapshot, for example), or discarding data that hasn’t been changed since the last backup cycle.  </p>
+<p>The transformation process may also put data into a different format that is optimised for long-term storage.  This may mean aggregation into large chunks of data for storage on tape or in the public cloud.</p>
+<h2 id="index">Index</h2>
+<p>Data in backups is retained purely to facilitate recovery.  As a result, data protection systems need to be able to retrieve that data at some future point.  This requirement has two processing aspects.  Firstly, an index of backup content needs to know where to find the backup copy.  Historically, this might mean a tape in the data centre or stored offsite at a 3rd party management company.  Today, backup data could be stored on an object store in the public cloud.  </p>
+<p>The second reason for indexing is to find data that may no longer have a primary copy.  For example, imagine refactoring an application onto the public cloud from an on-premises virtual server.  Although the application functionality remains the same, the data may now be in a virtual cloud instance with a different name, location and running on an updated application (such as a structured database).  If data from before the refactoring is needed, then some system of record is required to know that prior to the refactoring, the data and application existed elsewhere within the “virtual” data centre that could span on-premises and multiple public clouds.  Without a system of record, any recovery would require site knowledge that is easily lost over time.</p>
+<h2 id="load">Load</h2>
+<p>Once data has been extracted from a primary application, the transformed copy must be stored somewhere.  Unlike primary copies of data, backup copies (sometimes referred to as secondary copies) are generally stored on storage media suitable for long-term and low-cost retention.  Historically this has meant sequential access technology like magnetic tape, although modern backup solutions use a mix of media types to facilitate quick restores of the most recently protected data.</p>
+<p>The format for long-term retention of backups is an important aspect to consider, when building a data protection strategy.  We will dig into this topic in much more detail later.  However, it is worth highlighting that many businesses fail to implement a strategic approach to long-term data backup management, leaving a legacy of ageing tapes that may contain unknown content.</p>
+<p>The answer to this problem is, in many instances, to “kick the can down the road” and leave the problem to some future date.  That strategy isn’t always the right approach, as it introduces the risk of compliance and regulatory issues that could include financial penalties.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../chapter3/" class="btn btn-neutral float-left" title="3. Defining Data Protection"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../chapter5/" class="btn btn-neutral float-right" title="5. A Short History of Data Protection">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../chapter3/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../chapter5/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
