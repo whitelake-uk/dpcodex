@@ -1,0 +1,14 @@
+site_name: Data Protection Codex
+nav:
+  - Home: index.md
+  - Section 1:
+    - 1. A Short History of Data: chapter1.md
+    - 2. Why Protect Data?: chapter2.md
+    - 3. Defining Data Protection: chapter3.md
+    - 4. ETIL: chapter4.md
+  - Section 2:
+    - 5. A Short History of Data Protection: chapter5.md
+    - 6. Diving Deeper into Data Protection: chapter6.md
+      
+
+theme: readthedocs  
